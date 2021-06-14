@@ -42,7 +42,7 @@ First, get `cookiecutter`:
 
 Now run it against this repo:
 
-    $ cookiecutter gh:vchaptsev/cookiecutter-django-vue
+    $ cookiecutter https://github.com/xshapira/cookiecutter-django-vue.git
 
 You'll be prompted for some values. Provide them, then a  project
 will be created for you.

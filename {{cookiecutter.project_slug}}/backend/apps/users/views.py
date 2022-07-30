@@ -50,9 +50,7 @@ class UserViewSet(viewsets.ModelViewSet):
     def login(self, request, format=None):
         email = request.data.get('email', None)
         password = request.data.get('password', None)
-        user = authenticate(username=email, password=password)
-
-        if user:
+        if user := authenticate(username=email, password=password):
             login(request, user)
             return Response(status=status.HTTP_200_OK)
         return Response(status=status.HTTP_404_NOT_FOUND)

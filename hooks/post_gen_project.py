@@ -18,7 +18,11 @@ def set_secret_key():
         file_ = f.read()
 
     punctuation = string.punctuation.replace('"', '').replace("'", '').replace('\\', '')
-    secret = ''.join(random.choice(string.digits + string.ascii_letters + punctuation) for i in range(50))
+    secret = ''.join(
+        random.choice(string.digits + string.ascii_letters + punctuation)
+        for _ in range(50)
+    )
+
     file_ = file_.replace('CHANGEME!!!', secret, 1)
 
     # Write the results
